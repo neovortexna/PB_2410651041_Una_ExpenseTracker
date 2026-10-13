@@ -15,9 +15,9 @@ Perubahan:
 Tanggal: 13/10/2026
 
 Perubahan:
-- Merancang UI Blueprint dan wireframe/mockup 3 screen utama di Figma (Layar *Sign In*, *Create Account*, dan *Home Dashboard*).
-- Menambahkan komponen *Bottom Navigation Bar* dengan tombol tambah (+) terpusat.
-- Menambahkan komponen visual kartu ringkasan pengeluaran dan grafik tren bulanan.
-- Menyusun panduan *Style Guide*, *Accessibility Checklist*, dan *Refleksi Keputusan Desain*.
-- Memperbarui dokumentasi README dan CHANGELOG proyek.
+-Merancang UI Blueprint dan mockup 5 screen utama di Figma (Sign In, Create Account, Home Dashboard, Create Budget, dan Analytics).
+- Menambahkan fitur visualisasi pemantauan anggaran (*Track Budget*) dengan indikator persentase dan bar batas risiko.
+- Menambahkan layar *Analytics* berisi grafik batang pengeluaran mingguan (*Weekly Spending*) dan grafik donat kategori pengeluaran.
+- Menambahkan komponen *Floating Bottom Navigation Bar* dengan tombol aksi cepat (+) di tengah.
+- Menyusun *Style Guide*, *Accessibility Checklist*, serta memperbarui dokumentasi *README* dan *CHANGELOG* v0.1.
 

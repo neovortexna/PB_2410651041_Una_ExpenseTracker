@@ -20,9 +20,9 @@ v0.0 - Prototype
 ## Wirframe design
 - Halaman Autentikasi Pengguna (*Sign In* & *Create Account*).
 - Halaman Utama (*Home Dashboard*) dengan ringkasan total pengeluaran bulanan (*Total Spent*).
-- Grafik tren pengeluaran visual.
-- Daftar transaksi terakhir (*Recent Expenses*).
-- Navigasi bawah interaktif (*Bottom Navigation Bar*) dengan tombol aksi cepat.
+-Manajemen Anggaran (*Create Budget & Track Budget*) per kategori dengan indikator persentase.
+- Halaman Analisis (*Analytics*) dengan grafik pengeluaran mingguan (*Weekly Spending*) dan grafik donat kategori (*Expense Categories*).
+- Navigasi bawah interaktif (*Floating Bottom Navigation Bar*) dengan tombol aksi cepat (+).
 
 ## Cara Menjalankan
 flutter pub get
