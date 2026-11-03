@@ -1,7 +1,7 @@
 name: project1
-description: "A new Flutter project."
+description: "Expense Tracker - aplikasi pencatat pengeluaran untuk mahasiswa (Pemrograman Bergerak MJU.TIK.025)."
 publish_to: 'none'
-version: 0.1.0+1
+version: 0.2.0+1
 
 environment:
   sdk: ^3.13.4
