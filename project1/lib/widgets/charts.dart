@@ -80,7 +80,7 @@ class WeeklyBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final maxValue = values.reduce(math.max);
+    final maxValue = values.fold<double>(0, math.max);
     return Semantics(
       label: 'Grafik batang pengeluaran mingguan',
       child: SizedBox(
@@ -88,7 +88,10 @@ class WeeklyBarChart extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: List.generate(values.length, (i) {
-            final barHeight = (height - 28) * values[i] / maxValue;
+            // Jika semua nilai 0 (belum ada data), batang diberi tinggi 0.
+            final barHeight = maxValue == 0
+                ? 0.0
+                : (height - 28) * values[i] / maxValue;
             return Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,

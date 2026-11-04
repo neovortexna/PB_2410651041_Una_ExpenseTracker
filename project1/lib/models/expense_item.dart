@@ -1,53 +1,42 @@
-import 'package:flutter/material.dart';
-
-/// Data pengeluaran sederhana untuk tampilan (Navigation v0.1 / Form v0.2).
+/// Model data pengeluaran (Data Module v0.3 / BAB 7).
 ///
-/// Data di bawah ini adalah MOCK DATA (simulasi, bukan data pribadi nyata).
-/// Pada BAB 7 (Data Module v0.3) model ini akan dikembangkan menjadi model
-/// dengan `id` dan list yang bisa ditambah, diubah, dan dihapus (CRUD).
+/// Field:
+///  - [id]       : penanda unik (auto-increment sederhana dari ExpenseStore)
+///  - [title]    : nama pengeluaran, mis. "Makan siang"
+///  - [amount]   : nominal dalam Rupiah (bilangan bulat)
+///  - [category] : nama kategori, mis. "Food & Dining"
+///  - [date]     : tanggal pengeluaran dicatat
+///
+/// Model sengaja dibuat pure Dart (tanpa import Flutter) supaya mudah diuji.
+/// Ikon dan warna kategori ada di utils/category_style.dart.
 class ExpenseItem {
   const ExpenseItem({
+    required this.id,
     required this.title,
     required this.amount,
     required this.category,
-    required this.icon,
+    required this.date,
   });
 
+  final int id;
   final String title;
   final int amount; // dalam Rupiah
   final String category;
-  final IconData icon;
-}
+  final DateTime date;
 
-const List<ExpenseItem> sampleExpenses = [
-  ExpenseItem(
-    title: 'Makan',
-    amount: 20000,
-    category: 'Food & Dining',
-    icon: Icons.restaurant,
-  ),
-  ExpenseItem(
-    title: 'Bensin',
-    amount: 50000,
-    category: 'Transportation',
-    icon: Icons.local_gas_station,
-  ),
-  ExpenseItem(
-    title: 'Kuota Internet',
-    amount: 25000,
-    category: 'Other',
-    icon: Icons.wifi,
-  ),
-  ExpenseItem(
-    title: 'Bayar Kos',
-    amount: 700000,
-    category: 'Rent',
-    icon: Icons.home_outlined,
-  ),
-  ExpenseItem(
-    title: 'Makan Siang',
-    amount: 15000,
-    category: 'Food & Dining',
-    icon: Icons.restaurant,
-  ),
-];
+  /// Membuat salinan dengan sebagian field diganti (dipakai untuk Update).
+  ExpenseItem copyWith({
+    String? title,
+    int? amount,
+    String? category,
+    DateTime? date,
+  }) {
+    return ExpenseItem(
+      id: id,
+      title: title ?? this.title,
+      amount: amount ?? this.amount,
+      category: category ?? this.category,
+      date: date ?? this.date,
+    );
+  }
+}

@@ -4,6 +4,7 @@ import '../theme/app_theme.dart';
 import '../utils/session.dart';
 import '../widgets/app_bottom_nav.dart';
 import '../widgets/screen_header.dart';
+import 'budget_page.dart';
 import 'login_page.dart';
 
 /// Screen 6: Settings & Akun - akun aktif, menu, identitas pengembang, logout.
@@ -16,6 +17,18 @@ class SettingsPage extends StatelessWidget {
     'Notifications',
     'Help & Support',
   ];
+
+  void _onMenuTap(BuildContext context, String menu) {
+    if (menu == 'Categories') {
+      // Kategori dikelola (CRUD) pada screen Budget.
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const BudgetPage()),
+      );
+      return;
+    }
+    _showComingSoon(context, menu);
+  }
 
   void _showComingSoon(BuildContext context, String menu) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -89,7 +102,7 @@ class SettingsPage extends StatelessWidget {
                       child: ListTile(
                         title: Text(menu),
                         trailing: const Icon(Icons.chevron_right),
-                        onTap: () => _showComingSoon(context, menu),
+                        onTap: () => _onMenuTap(context, menu),
                       ),
                     ),
                   ),
@@ -105,7 +118,7 @@ class SettingsPage extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 8),
-                        Text('Expense Tracker v0.2 - Form & Validation'),
+                        Text('Expense Tracker v0.3 - Data Module'),
                         Text('Nama: Hotijatul Munauwaroh'),
                         Text('NIM: 2410651041'),
                         Text('Target Pengguna: Mahasiswa'),

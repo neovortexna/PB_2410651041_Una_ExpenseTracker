@@ -22,6 +22,22 @@ class Validators {
     return null;
   }
 
+  /// Seperti [name], ditambah: tidak boleh sama dengan nama yang sudah ada
+  /// ([existing]), tanpa membedakan huruf besar/kecil. Dipakai untuk kategori.
+  static String? uniqueName(
+    String? value, {
+    required Iterable<String> existing,
+    String label = 'Nama kategori',
+    int minLength = 3,
+  }) {
+    final basic = name(value, label: label, minLength: minLength);
+    if (basic != null) return basic;
+    final input = value!.trim().toLowerCase();
+    final duplicate = existing.any((e) => e.trim().toLowerCase() == input);
+    if (duplicate) return '$label sudah ada';
+    return null;
+  }
+
   /// Wajib diisi + format email dasar (ada "@" dan domain).
   static String? email(String? value) {
     if (value == null || value.trim().isEmpty) {

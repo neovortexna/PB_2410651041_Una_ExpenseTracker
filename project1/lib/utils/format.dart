@@ -10,3 +10,14 @@ String formatRupiah(int value) {
   }
   return buffer.toString();
 }
+
+const List<String> _monthNames = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+  'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des', //
+];
+
+/// Mengubah tanggal menjadi teks singkat, mis. "04 Nov 2026".
+String formatDate(DateTime date) {
+  final day = date.day.toString().padLeft(2, '0');
+  return '$day ${_monthNames[date.month - 1]} ${date.year}';
+}
