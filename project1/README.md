@@ -120,3 +120,4 @@ Lihat AI_USAGE.md.
 
 ## Catatan Keamanan Data
 Seluruh data dalam aplikasi adalah data simulasi (mock data) dan tidak memuat data pribadi nyata, password, token, API key, credential, atau data sensitif lain. Login hanya simulasi: password tidak disimpan.
+
